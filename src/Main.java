@@ -34,9 +34,8 @@ public class Main {
                 .filter(x -> x.getAge() > 18)
                 .filter(x -> x.getAge() < 65)
 
-                .filter(w -> !(w.getSex().equals(Sex.WOMAN) && w.getAge() > 60)  || (w.getSex().equals(Sex.MAN) && w.getAge() < 65))
+                .filter(w -> !(w.getSex().equals(Sex.WOMAN) && w.getAge() > 60) || (w.getSex().equals(Sex.MAN) && w.getAge() < 65))
 //                .filter(obj -> obj.getSex().equals(Sex.WOMAN) && obj.getAge() <= 60 || obj.getSex().equals(Sex.MAN) && obj.getAge() <= 65)
-
 
 
 //                .filter(x -> {
