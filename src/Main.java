@@ -22,19 +22,19 @@ public class Main {
                 .count();
         System.out.println("Лоличество призывников - " + countBefore18);
 
-//        List<String> surnameConscript = persons.stream()
-//                .filter(x -> x.getAge() > 18)
-//                .filter(x -> x.getAge() < 27)
-//                .map(x -> x.getFamily())
-//                .collect(Collectors.toList());
-//        System.out.println(surnameConscript);
+        List<String> surnameConscript = persons.stream()
+                .filter(x -> x.getAge() > 18)
+                .filter(x -> x.getAge() < 27)
+                .map(x -> x.getFamily())
+                .collect(Collectors.toList());
+        System.out.println(surnameConscript);
 
         List<Person> surnameEducation = persons.stream()
                 .filter(x -> x.getEducation().equals(Education.HIGHER))
                 .filter(x -> x.getAge() > 18)
                 .filter(x -> x.getAge() < 65)
 
-                .filter(w -> (w.getSex().equals(Sex.WOMAN) && w.getAge() < 60) )  //|| (w.getSex().equals(Sex.MAN) && w.getAge() < 65))
+                .filter(w -> !(w.getSex().equals(Sex.WOMAN) && w.getAge() > 60)  || (w.getSex().equals(Sex.MAN) && w.getAge() < 65))
 //                .filter(obj -> obj.getSex().equals(Sex.WOMAN) && obj.getAge() <= 60 || obj.getSex().equals(Sex.MAN) && obj.getAge() <= 65)
 
 
